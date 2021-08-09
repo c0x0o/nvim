@@ -1,33 +1,33 @@
 local npairs = require('nvim-autopairs')
 
 local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
+	return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
 local check_back_space = function()
-    local col = vim.fn.col('.') - 1
-    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-        return true
-    else
-        return false
-    end
+	local col = vim.fn.col('.') - 1
+	if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+		return true
+	else
+		return false
+	end
 end
 
 local function fix_cr()
-    vim.g.completion_confirm_key = ""
-    _G.my.completion_confirm=function()
-        if vim.fn.pumvisible() ~= 0  then
-            if vim.fn.complete_info()["selected"] ~= -1 then
-                return vim.fn["compe#confirm"](npairs.esc("<cr>"))
-            else
-                return npairs.esc("<cr>")
-            end
-        else
-            return npairs.autopairs_cr()
-        end
-    end
+	vim.g.completion_confirm_key = ""
+	_G.my.completion_confirm=function()
+		if vim.fn.pumvisible() ~= 0  then
+			if vim.fn.complete_info()["selected"] ~= -1 then
+				return vim.fn["compe#confirm"](npairs.esc("<cr>"))
+			else
+				return npairs.esc("<cr>")
+			end
+		else
+			return npairs.autopairs_cr()
+		end
+	end
 
-    vim.api.nvim_set_keymap('i' , '<CR>', 'v:lua.my.completion_confirm()', {expr = true , noremap = true})
+	vim.api.nvim_set_keymap('i' , '<CR>', 'v:lua.my.completion_confirm()', {expr = true , noremap = true})
 end
 
 local function fix_tab()

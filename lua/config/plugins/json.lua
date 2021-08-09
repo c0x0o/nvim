@@ -9,10 +9,10 @@ end
 local function setup()
 	_G.my.json_beautify = json_beautify
 	_G.my.json_uglify = json_uglify
-	
+
 	vim.cmd([[
-command -nargs=0 JSONBeautify lua my.json_beautify()
-command -nargs=0 JSONUglify lua my.json_uglify()
+	command -nargs=0 JSONBeautify lua my.json_beautify()
+	command -nargs=0 JSONUglify lua my.json_uglify()
 	]])
 end
 

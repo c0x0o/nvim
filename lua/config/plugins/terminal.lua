@@ -18,7 +18,7 @@ local function open_terminal_window()
 	if term == nil then
 		local term_buffer = vim.api.nvim_create_buf(false, true)
 		local term_window, _ = vim.api.nvim_open_win(term_buffer, true, get_window_option())
-		
+
 		vim.api.nvim_command('terminal')
 
 		term = {
@@ -67,10 +67,10 @@ local function setup()
 	-- setup key mapping
 	vim.api.nvim_set_keymap('n', '<C-c>', ':lua my.toggle_terminal_window()<CR>', {noremap = true, silent = true})
 	vim.cmd([[
-augroup MyTerminal
+	augroup MyTerminal
 	autocmd!
 	autocmd MyTerminal TermClose * lua my.close_terminal_window()
-augroup END
+	augroup END
 	]])
 end
 

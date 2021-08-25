@@ -74,6 +74,8 @@ local function setup(opt)
 	vim.api.nvim_set_keymap('n', '<Leader>v', ':vsplit<CR>', { noremap = true })
 	vim.api.nvim_set_keymap('n', '<Leader>/', ':nohls<CR>', { noremap = true, silent = true })
 	vim.api.nvim_set_keymap('n', '<Leader>b', ':ls<CR>', { noremap = true })
+	vim.api.nvim_set_keymap('n', '<Leader><', ':cp<CR>', { noremap = true })
+	vim.api.nvim_set_keymap('n', '<Leader>>', ':cn<CR>', { noremap = true })
 
 	-- some command that nvim not support api operation yet
 	vim.cmd('syntax on')

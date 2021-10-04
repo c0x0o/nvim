@@ -82,6 +82,16 @@ local function setup()
 			debounce_text_changes = 100,
 		}
 	}
+	
+	-- python language server
+	nvim_lsp.pylsp.setup{
+		on_attach = on_attach,
+		capabilities = capabilities,
+		settings = {},
+		flags = {
+			debounce_text_changes = 100,
+		}
+	}
 end
 
 return {

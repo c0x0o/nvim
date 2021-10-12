@@ -48,6 +48,7 @@ local function get_default_vim_option()
 		sidescrolloff = 15,
 		showtabline = 0,
 		wrap = false,
+		colorcolumn = '80'
 	}
 end
 

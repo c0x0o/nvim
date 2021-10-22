@@ -15,6 +15,7 @@ local function setup()
 		use 'nvim-lua/plenary.nvim'
 		use 'nvim-telescope/telescope.nvim'
 		use 'Thyrum/vim-stabs'
+		use 'mattn/emmet-vim'
 
 		-- git
 		use 'airblade/vim-gitgutter'
@@ -35,6 +36,7 @@ local function setup()
 	-- load plugin config
 	require('config/plugins/galaxyline').setup{}
 	require('config/plugins/diffview').setup{}
+	require('config/plugins/emmet-vim').setup{}
 	require('config/plugins/git-blame').setup{}
 	require('config/plugins/git-gutter').setup{}
 	require('config/plugins/lspconfig').setup{}

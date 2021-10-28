@@ -1,10 +1,9 @@
 function hex_to_rgb(hex)
-	local hex_in_decimal = tonumber(string.sub(hex, 2), 16);
-	local mask = 255;
+	hex = hex:gsub("#","")
 	return {
-		r = bit.band(bit.rshift(hex_in_decimal, 16), 255);
-		g = bit.band(bit.rshift(hex_in_decimal, 8), 255);
-		b = bit.band(hex_in_decimal, 255);
+		r = tonumber("0x"..hex:sub(1,2));
+		g = tonumber("0x"..hex:sub(3,4));
+		b = tonumber("0x"..hex:sub(5,6));
 	}
 end
 

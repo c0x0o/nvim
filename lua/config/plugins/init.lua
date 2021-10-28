@@ -20,7 +20,6 @@ local function setup()
 		-- git
 		use 'airblade/vim-gitgutter'
 		use 'f-person/git-blame.nvim'
-		use 'sindrets/diffview.nvim'
 
 		-- theme
 		use 'kyazdani42/nvim-web-devicons'
@@ -35,7 +34,6 @@ local function setup()
 
 	-- load plugin config
 	require('config/plugins/galaxyline').setup{}
-	require('config/plugins/diffview').setup{}
 	require('config/plugins/emmet-vim').setup{}
 	require('config/plugins/git-blame').setup{}
 	require('config/plugins/git-gutter').setup{}

@@ -1,9 +1,7 @@
 local function setup()
-	vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' } -- empty by default
 	vim.g.nvim_tree_gitignore = 0 -- 0 by default
 	vim.g.nvim_tree_quit_on_open = 0 -- 0 by default, closes the tree when you open a file
 	vim.g.nvim_tree_indent_markers = 1 -- 0 by default, this option shows indent markers when folders are open
-	vim.g.nvim_tree_hide_dotfiles = 0 -- 0 by default, this option hides files and folders starting with a dot `.`
 	vim.g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
 	vim.g.nvim_tree_highlight_opened_files = 1 -- 0 by default, will enable folder and file icon highlight for opened files/directories.
 	vim.g.nvim_tree_root_folder_modifier = ':~' -- This is the default. See :help filename-modifiers for more options
@@ -104,6 +102,10 @@ local function setup()
 			width = 50, -- 30 by default
 			auto_resize = true
 		},
+		filters = {
+			dotfiles = false,
+			custom = { '.git', 'node_modules', '.cache' }
+		}
 	}
 
 	vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<CR>', { noremap = true, silent = true})

@@ -99,7 +99,7 @@ local function setup()
 		},
 		view = {
 			side = 'left', -- left by default
-			width = 50, -- 30 by default
+			width = 40, -- 30 by default
 			auto_resize = true
 		},
 		filters = {

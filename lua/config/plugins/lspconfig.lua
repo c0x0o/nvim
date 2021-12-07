@@ -75,6 +75,7 @@ local function setup()
 
 	-- c++ lsp server
 	nvim_lsp.clangd.setup{
+		cmd = { "clangd", "-j", "4", "--background-index", },
 		on_attach = on_attach,
 		capabilities = capabilities,
 		settings = {},

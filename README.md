@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-> To make all plugins and function work, you need nvim v0.5.0 at least
+> To make all plugins and function work, you need nvim v0.6.0 at least
 
 1. You should install `jq`, `rg`(aka `ripgrep`), `xxd`(it should appear in most unix distribution), `git`(ofcourse)
    `jq` is an json text processor. `rg` is for fast fulltext search. `xxd` is for hex view.

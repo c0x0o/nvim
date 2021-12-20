@@ -62,6 +62,8 @@ local function setup()
 
 	-- rust lsp server
 	nvim_lsp.rust_analyzer.setup{
+		-- see https://github.com/rust-lang/rustup/issues/2411
+		cmd = {"rustup", "run", "nightly", "rust-analyzer", },
 		on_attach = on_attach,
 		capabilities = capabilities,
 		settings = {

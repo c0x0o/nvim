@@ -5,7 +5,7 @@ local function setup()
 		use 'wbthomason/packer.nvim'
 
 		-- editor
-		use { 'glepnir/galaxyline.nvim', branch = 'main' }
+		use 'nvim-lualine/lualine.nvim'
 		use 'tpope/vim-surround'
 		use 'airblade/vim-rooter'
 		use 'kyazdani42/nvim-tree.lua'
@@ -33,11 +33,11 @@ local function setup()
 	end)
 
 	-- load plugin config
-	require('config/plugins/galaxyline').setup{}
 	require('config/plugins/emmet-vim').setup{}
 	require('config/plugins/git-blame').setup{}
 	require('config/plugins/git-gutter').setup{}
 	require('config/plugins/lspconfig').setup{}
+	require('config/plugins/lua-line').setup{}
 	require('config/plugins/nerdcommenter').setup{}
 	require('config/plugins/nvim-autopairs').setup{}
 	require('config/plugins/nvim-compe').setup{}

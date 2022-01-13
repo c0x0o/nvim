@@ -95,8 +95,8 @@ local function setup(opt)
 	vim.cmd([[
 	augroup cursortoggle
 		autocmd!
-		autocmd WinLeave * set cursorcolumn! cursorline!
-		autocmd WinEnter * set cursorcolumn cursorline
+		autocmd BufLeave * set cursorcolumn! cursorline!
+		autocmd BufEnter * set cursorcolumn cursorline
 	augroup END
 	]])
 

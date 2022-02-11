@@ -1,5 +1,4 @@
 local function setup()
-	vim.g.nvim_tree_quit_on_open = 0 -- 0 by default, closes the tree when you open a file
 	vim.g.nvim_tree_indent_markers = 1 -- 0 by default, this option shows indent markers when folders are open
 	vim.g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
 	vim.g.nvim_tree_highlight_opened_files = 1 -- 0 by default, will enable folder and file icon highlight for opened files/directories.
@@ -92,7 +91,7 @@ local function setup()
 		},
 		ignore_ft_on_setup = { 'startify', 'dashboard', 'DiffviewFiles', 'terminal' }, -- empty by default, don't auto open tree on specific filetypes.
 		update_focused_file = {
-			enable = false, -- 0 by default, this option allows the cursor to be updated when entering a buffer
+			enable = true, -- 0 by default, this option allows the cursor to be updated when entering a buffer
 			update_cwd = false, -- 1 by default, will update the tree cwd when changing nvim's directory (DirChanged event). Behaves strangely with autochdir set.
 			ignore_list = {}
 		},
@@ -106,7 +105,17 @@ local function setup()
 			custom = { '.git', 'node_modules', '.cache' }
 		},
 		git = {
+			enable = true,
 			ignore = false,
+			timeout = 500,
+		},
+		actions = {
+			change_dir = {
+				global = false,
+			},
+			open_file = {
+				quit_on_open = false,
+			},
 		},
 	}
 

@@ -64,12 +64,19 @@ other components. You should make sure installed lsp server is located in your
 `$PATH`.
 
 Use `gd` to go to definition.
+
 Use `gD` to go to declaration.
+
 Use `gr` to find symbol references.
+
 Use `<leader>k` to see function document.
+
 Use `<leader>e` to see possible diagnostic information.
+
 Use `<leader>[` to goto previous diagnostic position in current file.
+
 Use `<leader>]` to goto next diagnostic position in current file.
+
 Use `ctrl-o` to jump back. This is a default shortcut for vim jump list.
 
 For more shortcut, see `lua/config/plugins/lspconfig.lua`.
@@ -85,7 +92,9 @@ Use `<leader>c` to toggle comment for a line. Also available in VISUAL mode.
 ### Git
 
 Use `<leader>{` to jump to previous hunk.
+
 Use `<leader>}` to jump to next hunk.
+
 Use `<leader>p` to preview the diff of hunk.
 
 ### More About Shortcut

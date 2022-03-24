@@ -48,7 +48,7 @@ Sometimes, you may want to copy some content from your GUI terminal. But there
 are so many annoying elements in nvim window, such as line number, git status
 sign, etc.
 
-Use `:GUICopy'` to remove them, and use `:GUICopyEnd` to get them back.
+Use `:GUICopy` to remove them, and use `:GUICopyEnd` to get them back.
 
 ### Languange Server Protocol
 

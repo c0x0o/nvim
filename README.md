@@ -44,7 +44,7 @@ and press `esc` again to close terminal window.
 
 ### GUI Copy Mode
 
-Sometimes, you may want to copy some content from your GUI terminal. but there
+Sometimes, you may want to copy some content from your GUI terminal. But there
 are so many annoying elements in nvim window, such as line number, git status
 sign, etc.
 
@@ -76,11 +76,21 @@ For more shortcut, see `lua/config/plugins/lspconfig.lua`.
 
 ### Tree viewer
 
-Use `<leader-t>` to toggle project tree viewer.
+Use `<leader>t` to toggle project tree viewer.
 
 ### Comment toggle
 
-Use `<leader-c>` to toggle comment for a line. Also available in VISUAL mode.
+Use `<leader>c` to toggle comment for a line. Also available in VISUAL mode.
+
+### Git
+
+Use `<leader>{` to jump to previous hunk.
+Use `<leader>}` to jump to next hunk.
+Use `<leader>p` to preview the diff of hunk.
+
+### More About Shortcut
+
+See files in `lua/config/editor` and `lua/config/plugins`
 
 ## Hack
 

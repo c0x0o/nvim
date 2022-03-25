@@ -57,7 +57,7 @@ We current add default lsp binding:
 1. `gopls` for golang
 2. `rust-analyzer` for rust
 3. `clangd` for c/cpp
-4. `jedi-languange-server` for python
+4. `python-lsp-server` for python
 
 You can install any of them by your choice. Missing either of them won't effect
 other components. You should make sure installed lsp server is located in your

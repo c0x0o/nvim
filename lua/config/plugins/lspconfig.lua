@@ -87,7 +87,7 @@ local function setup()
     }
     
     -- python language server
-    nvim_lsp.jedi_language_server.setup{
+    nvim_lsp.pylsp.setup{
         on_attach = on_attach,
         capabilities = capabilities,
         settings = {},

@@ -16,6 +16,7 @@ local function setup()
         use 'nvim-telescope/telescope.nvim'
         use 'Thyrum/vim-stabs'
         use 'mattn/emmet-vim'
+        use 'ygm2/rooter.nvim'
 
         -- git
         use 'airblade/vim-gitgutter'
@@ -42,6 +43,7 @@ local function setup()
     require('config/plugins/nvim-autopairs').setup{}
     require('config/plugins/nvim-compe').setup{}
     require('config/plugins/nvim-tree').setup{}
+    require('config/plugins/rooter').setup{}
     require('config/plugins/telescope').setup{}
     require('config/plugins/vim-stabs').setup{}
     require('config/plugins/vim-vsnip').setup{}

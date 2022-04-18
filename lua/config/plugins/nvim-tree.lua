@@ -70,18 +70,12 @@ local function setup()
                 error = ''
             }
         },
-        update_cwd = false, -- 1 by default, will update the tree cwd when changing nvim's directory (DirChanged event). Behaves strangely with autochdir set.
+        update_cwd = true, -- 1 by default, will update the tree cwd when changing nvim's directory (DirChanged event). Behaves strangely with autochdir set.
         -- hijacks new directory buffers when they are opened.
-        update_to_buf_dir = {
-            -- enable the feature
-            enable = true,
-            -- allow to open the tree if it was previously closed
-            auto_open = true,
-        },
         ignore_ft_on_setup = { 'startify', 'dashboard', 'DiffviewFiles', 'terminal' }, -- empty by default, don't auto open tree on specific filetypes.
         update_focused_file = {
             enable = false, -- 0 by default, this option allows the cursor to be updated when entering a buffer
-            update_cwd = false, -- 1 by default, will update the tree cwd when changing nvim's directory (DirChanged event). Behaves strangely with autochdir set.
+            update_cwd = true, -- 1 by default, will update the tree cwd when changing nvim's directory (DirChanged event). Behaves strangely with autochdir set.
             ignore_list = {}
         },
         view = {

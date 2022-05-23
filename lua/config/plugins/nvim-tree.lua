@@ -58,7 +58,6 @@ local function setup()
         disable_netrw = true,  -- 1 by default, disables netrw
         hijack_netrw = true, -- 1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
         open_on_setup = false, -- 0 by default, opens the tree when typing `vim $DIR` or `vim`
-        auto_close = false, -- 0 by default, closes the tree when it's the last window
         open_on_tab = false, -- 0 by default, will open the tree when entering a new tab and the tree was previously open
         hijack_cursor = false, -- 1 by default, when moving cursor in the tree, will position the cursor at the start of the file on the current line
         diagnostics = {

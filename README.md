@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-To make all plugins and function work, you need nvim v0.6.0 at least.
+To make all plugins and function work, you need nvim v0.7.0 at least.
 
 Neovim could be compiled either with Lua or LuaJIT. But without LuaJIT,
 global search for file and file content won't be functional. You may also

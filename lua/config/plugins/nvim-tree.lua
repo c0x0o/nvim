@@ -84,7 +84,7 @@ local function setup()
                 global = false,
             },
             open_file = {
-                auto_resize = true,
+                resize_window = true,
                 quit_on_open = true,
                 window_picker = {
                     enable = true,

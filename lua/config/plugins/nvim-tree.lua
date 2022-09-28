@@ -19,7 +19,7 @@ local function setup()
         -- hijacks new directory buffers when they are opened.
         ignore_ft_on_setup = { 'startify', 'dashboard', 'DiffviewFiles', 'terminal', 'packer' }, -- empty by default, don't auto open tree on specific filetypes.
         update_focused_file = {
-            enable = false, -- 0 by default, this option allows the cursor to be updated when entering a buffer
+            enable = true, -- 0 by default, this option allows the cursor to be updated when entering a buffer
             update_cwd = true, -- 1 by default, will update the tree cwd when changing nvim's directory (DirChanged event). Behaves strangely with autochdir set.
             ignore_list = {}
         },
@@ -85,7 +85,7 @@ local function setup()
             },
             open_file = {
                 resize_window = true,
-                quit_on_open = true,
+                quit_on_open = false,
                 window_picker = {
                     enable = true,
                     exclude = {

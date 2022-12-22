@@ -8,7 +8,12 @@ local function setup()
         use 'nvim-lualine/lualine.nvim'
         use 'tpope/vim-surround'
         use 'airblade/vim-rooter'
-        use 'kyazdani42/nvim-tree.lua'
+        use {
+            'nvim-tree/nvim-tree.lua',
+            requires = {
+                'nvim-tree/nvim-web-devicons',
+            }
+        }
         use 'windwp/nvim-autopairs'
         use 'preservim/nerdcommenter'
         use 'nvim-lua/popup.nvim'
@@ -23,7 +28,6 @@ local function setup()
         use 'f-person/git-blame.nvim'
 
         -- theme
-        use 'kyazdani42/nvim-web-devicons'
         use { 'dracula/vim', as = 'dracula', }
 
         -- lsp

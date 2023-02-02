@@ -1,9 +1,33 @@
+local function open_nvim_tree(data)
+  local ignored_file_type= { 'startify', 'dashboard', 'DiffviewFiles', 'terminal', 'packer' }
+
+  -- buffer is a real file on the disk
+  local real_file = vim.fn.filereadable(data.file) == 1
+
+  -- buffer is a [No Name]
+  local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+
+  -- file type
+  local filetype = vim.bo[data.buf].ft
+
+  -- only files please
+  if not real_file and not no_name then
+    return
+  end
+
+  -- skip ignored filetypes
+  if vim.tbl_contains(ignored_file_type, filetype) then
+    return
+  end
+
+  -- open the tree but don't focus it
+  require("nvim-tree.api").tree.toggle({ focus = false })
+end
+
 local function setup()
     require'nvim-tree'.setup {
         disable_netrw = true,  -- 1 by default, disables netrw
         hijack_netrw = true, -- 1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
-        open_on_setup = false, -- 0 by default, opens the tree when typing `vim $DIR` or `vim`
-        open_on_tab = false, -- 0 by default, will open the tree when entering a new tab and the tree was previously open
         hijack_cursor = false, -- 1 by default, when moving cursor in the tree, will position the cursor at the start of the file on the current line
         diagnostics = {
             enable = true,
@@ -102,6 +126,9 @@ local function setup()
     }
 
     vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<CR>', { noremap = true, silent = true})
+
+    -- setup vim enter callback
+    vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 end
 
 return {

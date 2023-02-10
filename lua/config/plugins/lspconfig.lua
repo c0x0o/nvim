@@ -26,7 +26,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<leader>[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
     buf_set_keymap('n', '<leader>]', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     buf_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.set_loclist()<CR>', opts)
-    buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+    buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", opts)
 
     -- format on save, it can be very slow
     -- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)")
@@ -88,6 +88,17 @@ local function setup()
     
     -- python language server
     nvim_lsp.pylsp.setup{
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = {},
+        flags = {
+            debounce_text_changes = 100,
+        }
+    }
+
+    -- javascript language server
+    nvim_lsp.tsserver.setup{
+        cmd = { "npm", "exec", "--", "typescript-language-server", "--stdio", },
         on_attach = on_attach,
         capabilities = capabilities,
         settings = {},

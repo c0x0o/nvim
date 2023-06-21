@@ -48,6 +48,7 @@ local function setup()
 
     -- golang lsp server
     nvim_lsp.gopls.setup{
+        root_dir = nvim_lsp.util.root_pattern('.git'),
         on_attach = on_attach,
         capabilities = capabilities,
         settings = {
@@ -77,6 +78,7 @@ local function setup()
 
     -- c++ lsp server
     nvim_lsp.clangd.setup{
+        root_dir = nvim_lsp.util.root_pattern('.git'),
         cmd = { "clangd", "-j", "4", "--background-index", },
         on_attach = on_attach,
         capabilities = capabilities,
@@ -88,6 +90,7 @@ local function setup()
     
     -- python language server
     nvim_lsp.pylsp.setup{
+        root_dir = nvim_lsp.util.root_pattern('.git'),
         on_attach = on_attach,
         capabilities = capabilities,
         settings = {},
@@ -98,6 +101,7 @@ local function setup()
 
     -- javascript language server
     nvim_lsp.tsserver.setup{
+        root_dir = nvim_lsp.util.root_pattern('.git'),
         cmd = { "npm", "exec", "--", "typescript-language-server", "--stdio", },
         on_attach = on_attach,
         capabilities = capabilities,

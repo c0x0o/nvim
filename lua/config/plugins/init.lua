@@ -16,10 +16,8 @@ local function setup()
         }
         use 'windwp/nvim-autopairs'
         use 'preservim/nerdcommenter'
-        use 'nvim-lua/popup.nvim'
         use 'nvim-lua/plenary.nvim'
         use 'nvim-telescope/telescope.nvim'
-        use 'Thyrum/vim-stabs'
         use 'mattn/emmet-vim'
         use 'ahmedkhalf/project.nvim'
         use 'akinsho/toggleterm.nvim'
@@ -33,26 +31,25 @@ local function setup()
 
         -- lsp
         use 'neovim/nvim-lspconfig'
-        use 'hrsh7th/nvim-compe'
-        use 'hrsh7th/vim-vsnip'
-        use 'hrsh7th/vim-vsnip-integ'
+        use 'hrsh7th/cmp-nvim-lsp'
+        use 'hrsh7th/cmp-path'
+        use 'hrsh7th/cmp-buffer'
+        use 'hrsh7th/cmp-cmdline'
+        use 'hrsh7th/nvim-cmp'
     end)
 
     -- load plugin config
     require('config/plugins/emmet-vim').setup{}
     require('config/plugins/git-blame').setup{}
     require('config/plugins/git-gutter').setup{}
-    require('config/plugins/lspconfig').setup{}
     require('config/plugins/lua-line').setup{}
     require('config/plugins/nerdcommenter').setup{}
     require('config/plugins/nvim-autopairs').setup{}
-    require('config/plugins/nvim-compe').setup{}
     require('config/plugins/nvim-tree').setup{}
     require('config/plugins/project').setup{}
     require('config/plugins/telescope').setup{}
     require('config/plugins/terminal').setup{}
-    require('config/plugins/vim-stabs').setup{}
-    require('config/plugins/vim-vsnip').setup{}
+    require('config/plugins/lsp').setup{}
 
     -- load customized plugin
     require('config/plugins/json').setup{}

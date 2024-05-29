@@ -22,6 +22,7 @@ local function setup()
         use 'Thyrum/vim-stabs'
         use 'mattn/emmet-vim'
         use 'ahmedkhalf/project.nvim'
+        use 'akinsho/toggleterm.nvim'
 
         -- git
         use 'airblade/vim-gitgutter'
@@ -49,6 +50,7 @@ local function setup()
     require('config/plugins/nvim-tree').setup{}
     require('config/plugins/project').setup{}
     require('config/plugins/telescope').setup{}
+    require('config/plugins/terminal').setup{}
     require('config/plugins/vim-stabs').setup{}
     require('config/plugins/vim-vsnip').setup{}
 

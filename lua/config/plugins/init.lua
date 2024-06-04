@@ -7,7 +7,6 @@ local function setup()
         -- editor
         use 'nvim-lualine/lualine.nvim'
         use 'tpope/vim-surround'
-        use 'airblade/vim-rooter'
         use {
             'nvim-tree/nvim-tree.lua',
             requires = {

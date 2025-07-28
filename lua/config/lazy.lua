@@ -56,7 +56,45 @@ require("lazy").setup({
                 }
             end,
         },
-        { "neovim/nvim-lspconfig" },
+        {
+            "neovim/nvim-lspconfig",
+            config = function(plug, opt)
+                keymap_opt = { noremap = true, silent = true }
+                vim.lsp.enable("rust_analyzer")
+                vim.lsp.enable("pylsp")
+                vim.lsp.enable("clangd")
+                vim.api.nvim_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", keymap_opt )
+                vim.api.nvim_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", keymap_opt )
+            end,
+        },
+        {
+            'saghen/blink.cmp',
+            version = '1.*',
+            opts = {
+                -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+                -- 'super-tab' for mappings similar to vscode (tab to accept)
+                -- 'enter' for enter to accept
+                -- 'none' for no mappings
+                --
+                -- All presets have the following mappings:
+                -- C-space: Open menu or open docs if already open
+                -- C-n/C-p or Up/Down: Select next/previous item
+                -- C-e: Hide menu
+                -- C-k: Toggle signature help (if signature.enabled = true)
+                --
+                -- See :h blink-cmp-config-keymap for defining your own keymap
+                keymap = { preset = 'enter' },
+                appearance = {
+                    nerd_font_variant = 'mono'
+                },
+                completion = { documentation = { auto_show = false } },
+                sources = {
+                    default = { 'lsp', 'path', 'snippets', 'buffer' },
+                },
+                fuzzy = { implementation = "prefer_rust_with_warning" }
+            },
+            opts_extend = { "sources.default" }
+        },
 
         -- editor
         {
@@ -72,15 +110,17 @@ require("lazy").setup({
         },
         {
             "lewis6991/gitsigns.nvim",
-            opts = {
-                current_line_blame = true,
-            },
+            opts = {},
             config = function(plug, opt)
+                require("gitsigns").setup(opt)
+
                 keymap_opt = { noremap = true, silent = true }
                 vim.api.nvim_set_keymap("n", "<Leader>gp", "<Cmd>Gitsigns preview_hunk<CR>", keymap_opt )
                 vim.api.nvim_set_keymap("n", "<Leader>gb", "<Cmd>Gitsigns blame_line<CR>", keymap_opt )
                 vim.api.nvim_set_keymap("n", "<Leader>gs", "<Cmd>Gitsigns stage_hunk<CR>", keymap_opt )
                 vim.api.nvim_set_keymap("n", "<Leader>gr", "<Cmd>Gitsigns reset_hunk<CR>", keymap_opt )
+                vim.api.nvim_set_keymap("n", "<Leader>g[", "<Cmd>Gitsigns nav_hunk prev<CR>", keymap_opt )
+                vim.api.nvim_set_keymap("n", "<Leader>g]", "<Cmd>Gitsigns nav_hunk next<CR>", keymap_opt )
             end,
         },
 
@@ -88,7 +128,9 @@ require("lazy").setup({
         {
             "ibhagwan/fzf-lua",
             dependencies = { "nvim-tree/nvim-web-devicons" },
-            opts = {},
+            opts = {
+                fzf_colors = { true },
+            },
             config = function(plug, opt)
                 require("fzf-lua").setup(opt)
                 keymap_opt = { noremap = true, silent = true }

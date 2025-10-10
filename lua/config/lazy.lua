@@ -123,6 +123,18 @@ require("lazy").setup({
                 vim.api.nvim_set_keymap("n", "<Leader>g]", "<Cmd>Gitsigns nav_hunk next<CR>", keymap_opt )
             end,
         },
+        {
+            'nvim-mini/mini.files',
+            version = false,
+            opts = {},
+            config = function(plug, opt)
+                require("mini.files").setup(opt)
+
+                keymap_opt = { noremap = true, silent = true }
+                vim.api.nvim_set_keymap("n", "<Leader>t", "<Cmd>lua MiniFiles.open(nil, false)<CR>", keymap_opt )
+            end,
+
+        },
 
         -- finder
         {

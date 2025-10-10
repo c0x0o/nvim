@@ -142,5 +142,5 @@ require("lazy").setup({
     },
     rocks = { enable = false },
     install = { colorscheme = { "dracula" } },
-    checker = { enabled = true },
+    checker = { enabled = false },
 })

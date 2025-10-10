@@ -63,6 +63,7 @@ require("lazy").setup({
                 vim.lsp.enable("rust_analyzer")
                 vim.lsp.enable("pylsp")
                 vim.lsp.enable("clangd")
+                vim.lsp.enable("zls")
                 vim.api.nvim_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", keymap_opt )
                 vim.api.nvim_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", keymap_opt )
             end,

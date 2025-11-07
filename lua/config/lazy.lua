@@ -132,7 +132,7 @@ require("lazy").setup({
                 require("mini.files").setup(opt)
 
                 keymap_opt = { noremap = true, silent = true }
-                vim.api.nvim_set_keymap("n", "<Leader>t", "<Cmd>lua MiniFiles.open(nil, false)<CR>", keymap_opt )
+                vim.api.nvim_set_keymap("n", "<Leader>t", "<Cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0), false)<CR>", keymap_opt )
             end,
 
         },
